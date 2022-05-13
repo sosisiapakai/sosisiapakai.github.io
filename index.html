@@ -1,58 +1,92 @@
+
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Link Paid Generator</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="konten"><h2>Paid Link Generator</h2><br/>
 
-<head>
-    <title>
-        Html CRUD with Pure JavaScript
-    </title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-    <table>
+    <form><center>
+      <table>
         <tr>
-            <td>
-                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
-                    <div>
-                        <label>Full Name*</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
-                        <input type="text" name="fullName" id="fullName">
-                    </div>
-                    <div>
-                        <label>EMP Code</label>
-                        <input type="text" name="empCode" id="empCode">
-                    </div>
-                    <div>
-                        <label>Salary</label>
-                        <input type="text" name="salary" id="salary">
-                    </div>
-                    <div>
-                        <label>City</label>
-                        <input type="text" name="city" id="city">
-                    </div>
-                    <div  class="form-action-buttons">
-                        <input type="submit" value="Submit">
-                    </div>
-                </form>
-            </td>
-            <td>
-                <table class="list" id="employeeList">
-                    <thead>
-                        <tr>
-                            <th>Full Name</th>
-                            <th>EMP Code</th>
-                            <th>Salary</th>
-                            <th>City</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                    </tbody>
-                </table>
-            </td>
+          <td>
+            <b>Student ID</b>
+          </td>
+          <td>
+            <input name="id_stu" type="text" required>
+          </td>
         </tr>
-    </table>
-    <script src="script.js"></script>
-</body>
+        <tr>
+          <td>
+            <b>Slot</b>
+          </td>
+          <td>
+            <select name="no_slot" class="opsi">
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+            </select>
+          </td>
+        </tr>
+         <tr>
+          <td>
+            <b>Date</b>
+          </td>
+          <td>
+            <input name="tggl" type="date" required>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"><center>
+            <input type="button" onclick="tampilkan();" value="Generate Link" class="tombol">
+          </td>
+        </tr>
+      </table></center>  
+    </form>
 
+      <script>
+        function tampilkan(){
+          var student = document.getElementsByName("id_stu")[0].value;
+          var slott = document.getElementsByName("no_slot")[0].value;
+          var tgl = document.getElementsByName("tggl")[0].value;
+          if (student == "" || slott == "" || tgl == ""){
+            window.alert("Lengkapi Formulir Terlebih Dahulu!");
+          }else{
+          
+          document.getElementById("hasil").innerHTML = "https://brightchamps.com/meetings/student_join.php?key=13572" + student + "&val=43315" + slott + "&date=" + tgl;
+
+        }
+          }
+
+      </script>
+
+      <p id="hasil"></p>
+   
+    </div>
+<script src="script.js"></script>
+  </body>
 </html>
