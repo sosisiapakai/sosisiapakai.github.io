@@ -1,1 +1,169 @@
-"Hello World! Welcome to my website" 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>按钮</title>
+    <script src="./js/jquery-3.3.1.min.js" src="./js/JS.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .outer{
+            height: 100%;
+            border: 1px solid red;
+        }
+        .inner{
+            width: 80px;
+            height: 80px;
+            background: #105811;
+            border: 1px solid red;
+            margin: 10px;
+            text-align:center;
+            line-height: 80px;
+            display: inline-block;
+            /* float: left; */
+        }
+        .one{
+            padding: 50px 0;
+            width: 300px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .two{
+            text-align: center;
+        }
+        .red{
+            background-color: red;
+        }
+    </style>
+    <script>
+        $(function(event){
+            $('button').click(function(){
+                if($(this).html()=="添加"){
+                    var $cl = $('<div class="inner">innerss</div>');
+                    $cl.appendTo($('.outer'));
+                    return;
+                }
+                if($(this).html()=="删除"){
+                    $('.inner:last').remove();      
+                    return;
+                }
+                if($(this).html()=="复制"){
+                    var $fz = $('.inner:first').clone();
+                    $fz.appendTo($('.outer'));
+                    return;
+                }
+                if($(this).html()=="设置类"){
+                    $('.inner').addClass('red');
+                    return;
+                }
+                if($(this).html()=="删除类"){
+                    $('.inner').removeClass('red');
+                    return;
+                }
+                if($(this).html()=="切换类"){
+                    if($('.inner').hasClass('red')){
+                        $('.inner').removeClass('red');
+                    }else{
+                        $('.inner').addClass('red');
+                    }
+                    return;
+                }
+                if($(this).html()=="隐藏"){
+                    $('.inner').hide(300);                    
+                    return;
+                }
+                if($(this).html()=="显示"){
+                    $('.inner').show(300);
+                    return;
+                }
+                if($(this).html()=="显示与隐藏"){
+                    $('.inner').toggle(300);                    
+                    return;
+                }
+                if($(this).html()=="淡出"){
+                    $('.inner').fadeOut(200);                    
+                    return;
+                }
+                if($(this).html()=="淡入"){
+                    $('.inner').fadeIn(200);                    
+                    return;
+                }
+                if($(this).html()=="淡入到"){
+                    $('.inner').fadeTo(300,0.4);                    
+                    return;
+                }
+                if($(this).html()=="淡入与淡出"){
+                    $('.inner').fadeToggle(300);                    
+                    return;
+                }
+                if($(this).html()=="划上"){
+                    $('.inner').slideUp(300);                    
+                    return;
+                }
+                if($(this).html()=="划下"){
+                    $('.inner').slideDown(300);                    
+                    return;
+                }
+                if($(this).html()=="划上与划下"){
+                    $('.inner').slideToggle(300);                    
+                    return;
+                }
+                if($(this).html()=="自定义动画"){
+                    $('.inner').animate({
+                        marginTop:'120px',
+                        marginLeft:'120px',
+                    },300);                    
+                    return;
+                }
+            })
+           
+           
+
+
+
+
+            $('button:contains(全选)').click(function(){
+                $('input[type=checkbox]').prop('checked',true);
+            });
+            $('button:contains(全不选)').click(function(){
+                $('input[type=checkbox]').prop('checked',false);
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">inner</div>
+    </div>
+    <div class="one">
+        <input type="checkbox" name="" id="">html
+        <input type="checkbox" name="" id="">javascript
+        <input type="checkbox" name="" id="">jQuery
+        <input type="checkbox" name="" id="">css
+    </div>
+    <div class="two">
+        <button>添加</button>
+        <button>删除</button>
+        <button>复制</button>
+        <button>设置类</button>
+        <button>删除类</button>
+        <button>切换类</button>
+        <button>显示</button>
+        <button>隐藏</button>
+        <button>显示与隐藏</button>
+        <button>淡入</button>
+        <button>淡出</button>
+        <button>淡入与淡出</button>
+        <button>划上</button>
+        <button>划下</button>
+        <button>划上与划下</button>
+        <button>全选</button>
+        <button>全不选</button>
+    </div>
+    
+</body>
+</html>
