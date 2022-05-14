@@ -1,2 +1,2 @@
 # sosisiapakai.github.io
-sosisiapakai
+Student Link Generator 1.0.0
